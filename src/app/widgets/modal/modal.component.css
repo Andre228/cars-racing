@@ -1,0 +1,44 @@
+
+button {
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.game-text {
+  margin-top: 5px;
+  font-family: "Agency FB";
+  color: white;
+  font-size: 20px;
+}
+
+.music-volume-text {
+  margin-bottom: 5px;
+}
+
+.modal-container {
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 10%;
+  height: 60px;
+
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 12;
+  display: none;
+}
+
+.modal-background {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+}

@@ -1,0 +1,29 @@
+
+
+
+<div class="container">
+
+  <div class="menu-container">
+    <button (click)="play()"  [disabled]="isStartGame">Play Game</button>
+    <button (click)="pause()" [disabled]="!isStartGame">Pause Game</button>
+  </div>
+
+  <div class="track-container">
+    <canvas  #track width="300" height="600"></canvas>
+  </div>
+
+  <div class="score-container" *ngIf="isStartGame">
+    <app-score [score]="score"
+               [bestResult]="getBestResult()"
+               [speed]="obstacleSpeed"
+               [goal]="goal"></app-score>
+  </div>
+
+  <app-modal [isStartGame]="isStartGame"
+             [musicVolume]="musicVolume"
+             (play)="startGame()"
+             (restart)="restart()"
+             (resume)="resume($event)"
+             (musicVolumeChange)="musicVolumeChange($event)"></app-modal>
+
+</div>

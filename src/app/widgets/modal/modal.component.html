@@ -1,0 +1,24 @@
+<div>
+
+  <div class="modal-container" #container>
+
+    <div class="game-text" *ngIf="resultMessage">
+      <h4>You had an accident, your best score is: </h4> {{ resultMessage }}
+    </div>
+
+    <button *ngIf="!isStartGame" (click)="playGame()">Start Game</button>
+
+    <button *ngIf="isStartGame" (click)="restartGame()">Restart Game</button>
+
+    <button *ngIf="!isCrash && isStartGame" (click)="resumeGame()">Resume</button>
+
+    <div *ngIf="!isCrash && isStartGame">
+      <label class="game-text music-volume-text">Music volume</label>
+      <input [value]="musicVolume" type="range" min="0" max="1" step="0.1" (change)="changeMusicVolume($event)"/>
+    </div>
+
+  </div>
+
+  <div class="modal-background" #background></div>
+
+</div>
